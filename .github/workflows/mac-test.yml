@@ -1,0 +1,19 @@
+name: Test on macOS
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Make script executable
+        run: chmod +x test.sh
+
+      - name: Run the script
+        run: ./test.sh
