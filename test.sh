@@ -72,7 +72,7 @@ install_dependencies
 
 # 检查并安装 requests
 if ! pip3 show requests >/dev/null 2>&1 || [ "$(pip3 show requests | grep Version | cut -d' ' -f2)" \< "2.31.0" ]; then
-    pip3 install 'requests>=2.31.0'
+    pip3 install --break-system-packages 'requests>=2.31.0'
 fi
 
 # 设置自启动
